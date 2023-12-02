@@ -1,0 +1,278 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style du corps de la page */
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Style du conteneur principal */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Style de la colonne de gauche */
+.container .left {
+    width: 15%;
+    height: 100%;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    padding: 20px 0;
+    border-right: 1px solid #222;
+    position: fixed;
+}
+
+/* Style des paragraphes dans la colonne de gauche */
+.container .left p {
+    font-size: 18px;
+    color: grey;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+/* Style des éléments de navigation dans la colonne de gauche */
+.container .left .flow {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 20px;
+    margin: 1px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+}
+
+/* Style du bouton Home dans la colonne de gauche */
+.container .left .home h2 {
+    color: white; /* Modification de la couleur à blanc */
+    font-weight: lighter;
+}
+
+.container .left .home span {
+    color: red;
+}
+
+/* Style pour la surbrillance au survol sauf pour le bouton Home */
+.container .left .flow:hover:not(.home) {
+    background-color: #222;
+}
+
+.container .left .home {
+    background-color: rgba(236, 35, 35, 0.212);
+}
+
+.container .flow span {
+    font-size: 25px;
+    color: rgb(226, 226, 226);
+}
+
+.container .flow h2 {
+    text-transform: capitalize;
+    color: rgb(226, 226, 226);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* Style de la colonne de droite */
+.container .right {
+    width: 85%;
+    position: absolute;
+    right: 0;
+    background-color: #111;
+}
+
+/* Style de l'en-tête dans la colonne de droite */
+.right .heading {
+    display: flex;
+    color: rgb(226, 226, 226);
+}
+
+/* Style du contenu principal dans la colonne de droite */
+.right .heading .head-content {
+    width: 50%;
+    padding: 20px;
+    background-color: black;
+}
+
+.right .heading .head-content h2 {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.right .heading .head-content .rating {
+    display: flex;
+    margin: 30px 0;
+}
+
+.right .heading .head-content .btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    border: 1px solid white;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: 5px;
+    border-radius: 50px;
+}
+
+.right .heading .head-content .btn .material-icons {
+    font-size: 20px;
+}
+
+.right .heading .head-content .btn .star {
+    color: greenyellow;
+}
+
+.right .heading .head-content p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.right .heading .head-content .btn-main {
+    border-radius: 5px;
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    width: 120px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    background-color: red;
+    border: none;
+    text-transform: capitalize;
+}
+
+.right .heading .img-container {
+    width: 50%;
+    height: 350px;
+    background: url(../images/main-img.jpg) no-repeat center center / cover;
+}
+
+.right .heading .img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles pour les éléments "Trending" */
+.trending {
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+h1 {
+    color: rgb(226, 226, 226);
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+h1 span {
+    font-size: 16px;
+    color: red;
+    font-weight: lighter;
+    margin-left: 20px;
+}
+
+.trending .movie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.list {
+    width: 250px;
+    height: 300px;
+    position: relative;
+}
+
+.list::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: all 0.4s;
+}
+
+.list:hover::before {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.list:nth-child(1)::before {
+    content: 'extraction';
+}
+
+.list:nth-child(2)::before {
+    content: 'star wars';
+}
+
+.list:nth-child(3)::before {
+    content: 'The call wild';
+}
+
+.list:nth-child(4)::before {
+    content: 'birds of prey';
+}
+
+.list:nth-child(5)::before {
+    content: 'sonic';
+}
+
+.list:nth-child(1) {
+    background: url(../images/extraction.jpg) no-repeat center center / cover;
+}
+
+.list:nth-child(2) {
+    background: url(../images/star-wars.jpg) no-repeat center center / cover;
+}
+
+/* Styles pour le bouton de redirection */
+.redirection-btn {
+    text-decoration: none;
+    color: #fff; /* Couleur du texte en blanc */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.redirection-btn:hover {
+    color: #ff4500;
+}
+
+.list:nth-child(3) {
+    background: url(../images/wild.jpg) no-repeat center;
+}

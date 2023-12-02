@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Extraction</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .movie-container {
+            display: flex;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #222;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .movie-details {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .movie-poster {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            margin-left: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .info-item {
+            margin-bottom: 10px;
+        }
+
+        .movie-description {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: justify; 
+        }
+
+        .reservation-section {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: red;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .reservation-section:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="movie-container">
+        <div class="movie-details">
+            <h1>Extraction</h1>
+            <div class="info-item">Genre : Action</div>
+            <div class="info-item">Année : 2020</div>
+            <div class="info-item">Étoiles : 6.7</div>
+            <div class="info-item">Description :</div>
+            <p class="movie-description">
+                Tyler Rake, un mercenaire intrépide, se lance dans sa mission de vie la plus meurtrière 
+                lorsqu'il est engagé pour sauver le fils kidnappé d'un criminel international.
+            </p>
+            <div class="reservation-section">
+                Réserver la séance
+            </div>
+        </div>
+        <img class="movie-poster" src="images/Extraction.jpg" alt="Affiche Extraction">
+    </div>
+</body>
+</html>
