@@ -1,35 +1,22 @@
-# Titre de votre Projet
+# Réservation de Cinéma
 
-Description concise de votre projet.
-
-## Table des matières
-
-- [Aperçu](#aperçu)
-- [Fonctionnalités](#fonctionnalités)
-- [Captures d'écran](#captures-décran)
-- [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Contribuer](#contribuer)
-- [Licence](#licence)
+Un site web de réservation de cinéma permettant aux utilisateurs de découvrir et de réserver des films et des émissions de télévision.
 
 ## Aperçu
 
-Donnez une brève description ou aperçu de votre projet. Vous pouvez également inclure des badges ou des icônes pour montrer l'état du projet, la version, etc.
+Le projet "Réservation de Cinéma" offre une plateforme conviviale pour explorer les derniers films et émissions de télévision, afficher des informations détaillées et réserver des séances.
 
-## Fonctionnalités
+## Caractéristiques
 
-Énumérez les principales fonctionnalités de votre projet.
-
-## Captures d'écran
-
-Insérez ici quelques captures d'écran illustrant l'utilisation de votre projet.
+- Navigation conviviale avec une barre latérale intuitive.
+- Informations détaillées sur les films et les émissions de télévision.
+- Possibilité de réserver des séances et de découvrir les tendances.
 
 ## Installation
 
-Expliquez comment installer votre projet. Incluez toutes les dépendances, configurations ou étapes nécessaires.
+Pour installer localement, suivez ces étapes :
 
 ```bash
-# Exemple de commandes d'installation
-git clone https://github.com/votre-utilisateur/votre-projet.git
-cd votre-projet
+git clone https://github.com/votre-utilisateur/reservation-cinema.git
+cd reservation-cinema
 npm install
