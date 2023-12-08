@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 04 déc. 2023 à 12:37
+-- Généré le : ven. 08 déc. 2023 à 10:09
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -24,6 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `connexion`
+--
+
+DROP TABLE IF EXISTS `connexion`;
+CREATE TABLE IF NOT EXISTS `connexion` (
+  `mail` varchar(255) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `film`
 --
 
@@ -35,6 +47,20 @@ CREATE TABLE IF NOT EXISTS `film` (
   `duree` int(11) NOT NULL,
   `restriction_age` int(11) NOT NULL,
   PRIMARY KEY (`id_film`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `genre_film`
+--
+
+DROP TABLE IF EXISTS `genre_film`;
+CREATE TABLE IF NOT EXISTS `genre_film` (
+  `aventure` varchar(255) NOT NULL,
+  `action` varchar(255) NOT NULL,
+  `comedie` varchar(255) NOT NULL,
+  `horreur` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -92,12 +118,20 @@ DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(55) NOT NULL,
-  `prenom` varchar(55) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `mot_de_passe` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `age` int(11) NOT NULL,
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `email`, `password`, `age`) VALUES
+(1, 'db', 'i.debbab@lprs.fr', 'ilyes123', 18),
+(2, 'ii', 'samy@lprs.fr', 'samy123', 19),
+(3, 'AZE', 'az@az.Fr', 'AZE', 12);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
