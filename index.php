@@ -107,8 +107,8 @@ session_start();
             <div class="dropdown">
                 <button class="dropbtn">Language</button>
                 <div class="dropdown-content">
-                    <a href="index.html">Anglais</a>
-                    <a href="indexFr.html">Français</a>
+                    <a href="index.php">Anglais</a>
+                    <a href="indexFr.php">Français</a>
                 </div>
             </div>
             <div class="flow">

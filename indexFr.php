@@ -14,28 +14,34 @@ session_start();
     <title>Document</title>
     <link rel="stylesheet" href="./css/mstyle.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #1f1f1f;
-            color: #fff;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #1f1f1f;
+        color: #fff;
+    }
 
-        .container {
-            display: flex;
-            height: 100vh;
-        }
+    .container {
+        display: flex;
+        height: 100vh;
+    }
 
-        .left {
-            width: 15%;
-            background-color: #111;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .left {
+        width: 15%;
+        background-color: #111;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right {
+        flex: 1;
+        overflow: auto;
+        padding: 20px;
+        box-sizing: border-box;
+            }
 
         p {
             font-size: 18px;
@@ -83,6 +89,7 @@ session_start();
         .sign-in-link:hover {
             color: #ff4500;
         }
+
     </style>
 </head>
 <body>
