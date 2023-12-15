@@ -12,24 +12,24 @@ if (isset($_POST['email'], $_POST['password'], $_POST['confirm_password'], $_POS
     $age = $_POST['age'];
 
     if ($password != $confirm_password) {
-        echo "T'es nul";
+        echo "Les mots de passe ne correspondent pas";
         exit();
     }
+
+    // Hash the password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO utilisateur (nom, email, password, age) VALUES (?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
 
-    try {
-        $result = $stmt->execute([$name, $email, $password, $age]);
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-        exit();
-    }
+    $result = $stmt->execute([$name, $email, $hashed_password, $age]);
 
     if ($result) {
-        echo "NICE ";
+        // Redirect to signin.html
+        header('Location: signin.html');
+        exit();
     } else {
-        echo "FONCTIONNE PAS";
+        echo "Erreur lors de l'inscription";
     }
 }
 ?>

@@ -1,5 +1,11 @@
+<?php
+
+// Connexion à la base de données
+session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,30 +92,33 @@
             <p>Web-Movie</p>
             <div class="flow home">
                 <span class="material-icons">home</span>
-                <a href="index.html" class="redirection-btn">Home</a>
+                <a href="index.html" class="redirection-btn">Accueil</a>
             </div>
             
             <div class="flow">
                 <span class="material-icons">movie_filter</span>
-                <h2>Reservation</h2>
+                <h2>Réservation</h2>
             </div>
             <div class="flow">
                 <span class="material-icons">search</span>
-                <h2>Search</h2>
+                <h2>Rechercher</h2>
             </div>
-            <p>Account</p>
+            <p>Comptes</p>
             <div class="dropdown">
-                <button class="dropbtn">Language</button>
+                <button class="dropbtn">Langue</button>
                 <div class="dropdown-content">
-                    <a href="index.html">Anglais</a>
-                    <a href="indexFr.html">Français</a>
+                    <a href="index.php">Anglais</a>
+                    <a href="indexFr.php">Français</a>
                 </div>
             </div>
             <div class="flow">
                 <span class="material-icons">account_circle</span>
                 <div class="flow">
-                    <a href="../web-movie-master/sign-up/signin.html" class="sign-in-link">Sign in</a>
-                </div>
+                <?php if (isset($_SESSION['name'])): ?>
+        <a href="#" class="sign-in-link"><?php echo $_SESSION['name']; ?></a>
+    <?php else: ?>
+        <a href="../web-movie-master/sign-up/signin.html" class="sign-in-link">Connexion</a>
+    <?php endif; ?>
             </div>
         </div>
         <div class="right">         
@@ -120,13 +129,13 @@
                         <div class="btn"><span class="material-icons">movie_filter</span><span>2021</span></div>
                         <div class="btn"><span class="material-icons star">star</span><span>26.1</span></div>
                     </div>
-                    <p>A group of content viewers arrive at an island hotel to live out their dreams, only to find themselves trapped in nightmare scenarios.</p>
-                    <a href="../web-movie-master/AfficheFIlm/fantasy.html" class="btn btn-main">check more</a>
+                    <p>Un groupe de téléspectateurs arrive sur une île-hôtel pour vivre ses rêves, mais se retrouve piégé dans des scénarios cauchemardesques.</p>
+                    <a href="../web-movie-master/AfficheFIlm/fantasy.html" class="btn btn-main">voir plus</a>
                 </div>
                 <div class="img-container"></div>
             </div>
             <div class="trending">
-                <h1>Trending Movies <span>see all</span></h1>
+                <h1>Films à la mode <span>voir tout</span></h1>
                 <div class="movie-container">
                     <div class="list"></div>
                     <div class="list"></div>
@@ -136,7 +145,7 @@
                 </div>
             </div>
             <div class="trending">
-                <h1>Trending Movies <span>see all</span></h1>
+                <h1>Films à la mode<span>voir tout</span></h1>
                 <div class="movie-container tv">
                     <div class="list"></div>
                     <div class="list"></div>
