@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 08 déc. 2023 à 10:09
+-- Généré le : ven. 15 déc. 2023 à 10:29
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -42,12 +42,35 @@ CREATE TABLE IF NOT EXISTS `connexion` (
 DROP TABLE IF EXISTS `film`;
 CREATE TABLE IF NOT EXISTS `film` (
   `id_film` int(11) NOT NULL AUTO_INCREMENT,
-  `theme` varchar(100) NOT NULL,
-  `date_creation` date NOT NULL,
-  `duree` int(11) NOT NULL,
-  `restriction_age` int(11) NOT NULL,
+  `nom_film` varchar(255) DEFAULT NULL,
+  `auteur` varchar(255) DEFAULT NULL,
+  `synopsis` text,
+  `date_creation` date DEFAULT NULL,
+  `genre` varchar(255) DEFAULT NULL,
+  `duree_heures` int(11) DEFAULT NULL,
+  `duree_minutes` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `restriction_age` enum('mineur','majeur') DEFAULT NULL,
+  `pays` varchar(255) DEFAULT NULL,
+  `langue` enum('français','anglais','japonais','arabe') DEFAULT NULL,
+  `sous_titre` enum('français','anglais','japonais','arabe') DEFAULT NULL,
   PRIMARY KEY (`id_film`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `film`
+--
+
+INSERT INTO `film` (`id_film`, `nom_film`, `auteur`, `synopsis`, `date_creation`, `genre`, `duree_heures`, `duree_minutes`, `image`, `restriction_age`, `pays`, `langue`, `sous_titre`) VALUES
+(1, 'justice', 'rwano', 'un mec pas ouf', '2001-04-09', 'JUSTICE', 1, 39, 'JESAISPASENCORE', 'mineur', 'FRANCE', 'français', 'français'),
+(2, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'anglais', 'japonais'),
+(3, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'anglais', 'japonais'),
+(4, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'japonais', 'japonais'),
+(5, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'arabe', 'japonais'),
+(6, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'arabe', 'anglais'),
+(7, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'arabe', 'japonais'),
+(8, 'azeazezae', 'aezaze', 'aez', '1113-11-11', 'AZEAZE', 1, 1, 'AZEAZEAZEAZEAZE', 'mineur', 'FRANCE', 'arabe', 'arabe'),
+(9, 'aze', 'aez', 'aza', '1111-11-11', 'AZEAZEAZEAZE', 1, 1, 'AZAEAZE', 'mineur', 'AZEAZEAZE', 'français', 'français');
 
 -- --------------------------------------------------------
 
@@ -122,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `password` varchar(255) NOT NULL,
   `age` int(11) NOT NULL,
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
@@ -131,7 +154,13 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `email`, `password`, `age`) VALUES
 (1, 'db', 'i.debbab@lprs.fr', 'ilyes123', 18),
 (2, 'ii', 'samy@lprs.fr', 'samy123', 19),
-(3, 'AZE', 'az@az.Fr', 'AZE', 12);
+(3, 'AZE', 'az@az.Fr', 'AZE', 12),
+(4, 'SA', 'swdfhgxjhkjhgjgd@f.fr', 'sasa', 19),
+(5, 'SAMY', 'ale@fr.Fr', 'SASA', 19),
+(6, 'AZE', 'rwano@lpr.fr', '$2y$10$AmXTEFNxuaVw/TfgWEcEluSQgrwiilGkb2AcZHZKVfQGiN/nD667y', 19),
+(7, 'SASA', 'nathan-songo@lprs.fr', '$2y$10$FKR7o1aghYP0MagcV7GB8.1QnJLKTSF0Tl8JVs0d1SOH1LVTw0r/m', 199),
+(8, 'Erwan', 'erwan@lprs.Fr', '$2y$10$tKP3jENpgINOUelRL2TbZ.C1S2WyUwG1eQyBfyJatdo0b5ulZObj2', 18),
+(9, 'LePlusFortEnPhP', 'mattei@lprs.Fr', '$2y$10$L/Pe7.BrTTe0wP0/n5pL2O8cO8mCGq2YGu1aMDGnCtkcaEuYghvIe', 24);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
