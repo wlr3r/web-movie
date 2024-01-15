@@ -28,4 +28,5 @@
  } else {
   echo "Aucun ID de film n'a été soumis.";
  }
+ 
 ?>

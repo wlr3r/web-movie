@@ -3,6 +3,11 @@
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=sak_movie;charset=utf8mb4', 'root', '');
 
+if (!isset($_POST['username']) || !isset($_POST['password'])) {
+    echo "Username or password not provided";
+    exit;
+}   
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -10,11 +15,12 @@ $password = $_POST['password'];
 $stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE nom = :nom AND password = :password AND role = :role');
 $stmt->execute(['nom' => $username, 'password' => $password, 'role' => 'admin']);
 $user = $stmt->fetch();
-
-if ($user) {
- $_SESSION['admin_logged_in'] = true; 
- header('Location: users.php');
+if ($user['role'] == 'admin') {
+    $_SESSION['admin_logged_in'] = true; 
+    header('Location: users.php');
 } else {
- echo "Invalid username or password";
+    echo "Invalid username or password";
 }
+
 ?>
+``` 
