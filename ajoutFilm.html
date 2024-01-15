@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-<meta charset="UTF-8">
-<html>
 <head>
-  <title>Création de film</title>
+<meta charset="UTF-8">
+<title>Création de film</title>
 </head>
 <body>
 
 <h2>Formulaire de création de film</h2>
 
-<form action="ajoutFilm.php" method="post">
+<form action="ajoutFilm.php" method="post" enctype="multipart/form-data">
  <div>
  <label for="filmname">Nom du film:</label>
  <input type="text" id="nom_film" name="nom_film">
@@ -23,12 +22,12 @@
  <textarea id="synopsis" name="synopsis"></textarea>
  </div>
  <div>
- <label for="date">Date de création:</label>
- <input type="date" id="date_creation" name="date_creation">
- </div>
- <div>
  <label for="genre">Genre:</label>
  <input type="text" id="genre" name="genre">
+ </div>
+ <div>
+ <label for="date_creation">Date de création:</label>
+ <input type="date" id="date_creation" name="date_creation">
  </div>
  <div>
  <label for="duration">Durée:</label>
@@ -37,7 +36,7 @@
  </div>
  <div>
  <label for="image">Image:</label>
- <input type="text" id="image" name="image">
+ <input type="file" id="image" name="image" accept=".jpeg, .jpg, .png">
  </div>
  <div>
  <label for="age">Age:</label>
@@ -69,9 +68,9 @@
  </select>
  </div>
  <div>
- <input type="submit" value="création">
+ <input type="submit" value="Créer le film">
  </div>
-</form> 
+</form>
 
 </body>
 </html>
