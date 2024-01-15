@@ -1,10 +1,10 @@
 # Réservation de Cinéma
 
-Un site web de réservation de cinéma permettant aux utilisateurs de découvrir et de réserver des films et des émissions de télévision.
+Bienvenue sur le site de réservation de cinéma, votre destination ultime pour explorer, réserver et profiter des derniers films et émissions de télévision. Découvrez ci-dessous les nouvelles fonctionnalités ajoutées à notre plateforme.
 
 ## Aperçu
 
-Le projet "Réservation de Cinéma" offre une plateforme conviviale pour explorer les derniers films et émissions de télévision, afficher des informations détaillées et réserver des séances.
+Le projet "Réservation de Cinéma" offre une expérience conviviale permettant aux utilisateurs de découvrir des films et des émissions de télévision, d'accéder à des informations détaillées et de réserver des séances.
 
 ## Caractéristiques
 
@@ -14,11 +14,19 @@ Le projet "Réservation de Cinéma" offre une plateforme conviviale pour explore
 
 ## Nouvelles fonctionnalités
 
-- **Inscription des utilisateurs** : Les utilisateurs peuvent maintenant s'inscrire sur le site. Lors de l'inscription, les utilisateurs doivent fournir leur nom, leur âge et un mot de passe. Le mot de passe est haché avant d'être stocké dans la base de données pour des raisons de sécurité.
+### Inscription et Connexion des utilisateurs
 
-- **Connexion des utilisateurs** : Les utilisateurs peuvent se connecter au site en utilisant leur email et leur mot de passe. Le mot de passe entré est vérifié par rapport au mot de passe haché stocké dans la base de données.
+- **Inscription des utilisateurs** : Les utilisateurs peuvent désormais s'inscrire sur le site. Lors de l'inscription, ils doivent fournir leur nom, leur âge et un mot de passe. Le mot de passe est sécurisé via un processus de hachage avant d'être stocké dans la base de données.
+
+- **Connexion des utilisateurs** : Les utilisateurs peuvent se connecter en utilisant leur email et leur mot de passe. Le système vérifie la validité du mot de passe par rapport à celui stocké de manière sécurisée dans la base de données.
 
 - **Affichage du nom de l'utilisateur** : Une fois connecté, le nom de l'utilisateur est affiché dans le coin supérieur droit de la page d'accueil.
+
+### Administration
+
+- **Panel administrateur** : Les administrateurs peuvent accéder à un panneau de contrôle qui leur permet d'ajouter de nouveaux films, de supprimer des utilisateurs, de gérer les connexions administratives, de modifier les informations utilisateur et de mettre à jour les détails des films.
+
+- **Ajout automatique d'image** : L'ajout de nouveaux films comprend désormais une fonctionnalité d'ajout automatique d'image via la base de données MySQL pour une expérience plus fluide.
 
 ## Installation
 
