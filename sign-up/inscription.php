@@ -19,10 +19,10 @@ if (isset($_POST['email'], $_POST['password'], $_POST['confirm_password'], $_POS
     // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO utilisateur (nom, email, password, age) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO utilisateur (nom, email, password, age, role) VALUES (?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
 
-    $result = $stmt->execute([$name, $email, $hashed_password, $age]);
+    $result = $stmt->execute([$name, $email, $hashed_password, $age, "membre"]);
 
     if ($result) {
         // Redirect to signin.html

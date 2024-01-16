@@ -106,6 +106,7 @@
         $search = $_POST['search'];
     }
 
+  
     $sql = "SELECT * FROM utilisateur WHERE id_utilisateur LIKE ? OR nom LIKE ? OR email LIKE ? OR role LIKE ? OR age LIKE ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(["%$search%", "%$search%", "%$search%", "%$search%", "%$search%"]);

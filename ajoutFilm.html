@@ -3,6 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <title>Création de film</title>
+<style>
+body {
+ font-family: Arial, sans-serif;
+ background-color: #f4f4f4;
+ margin: 0;
+ padding: 0;
+}
+
+h2 {
+ color: #333;
+ text-align: center;
+ margin-top: 50px;
+}
+
+form {
+ width: 500px;
+ margin: 50px auto;
+ background-color: #fff;
+ padding: 30px;
+ border-radius: 8px;
+ box-shadow: 0px 0px 10px 0px #000;
+}
+
+form div {
+ margin-bottom: 15px;
+}
+
+form label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+form input[type="text"], form input[type="date"], form input[type="number"], form textarea {
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+}
+
+form input[type="file"] {
+ border: none;
+}
+
+form input[type="submit"] {
+ background-color: #333;
+ color: #fff;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+ background-color: #444;
+}
+</style>
 </head>
 <body>
 
@@ -37,38 +93,6 @@
  <div>
  <label for="image">Image:</label>
  <input type="file" id="image" name="image" accept=".jpeg, .jpg, .png">
- </div>
- <div>
- <label for="age">Age:</label>
- <select id="restriction_age" name="restriction_age">
-  <option value="mineur">Mineur</option>
-  <option value="majeur">Majeur</option>
- </select>
- </div>
- <div>
- <label for="country">Pays:</label>
- <input type="text" id="pays" name="pays">
- </div>
- <div>
- <label for="language">Langue:</label>
- <select id="langue" name="langue">
-  <option value="francais">Français</option>
-  <option value="anglais">Anglais</option>
-  <option value="japonais">Japonais</option>
-  <option value="arabe">Arabe</option>
- </select>
- </div>
- <div>
- <label for="subtitle">Sous-titre:</label>
- <select id="sous_titre" name="sous_titre">
-  <option value="francais">Français</option>
-  <option value="anglais">Anglais</option>
-  <option value="japonais">Japonais</option>
-  <option value="arabe">Arabe</option>
- </select>
- </div>
- <div>
- <input type="submit" value="Créer le film">
  </div>
 </form>
 
