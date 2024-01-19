@@ -14,18 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $duree_minutes = $_POST['duree_minutes'];
     $pays = $_POST['pays'];
     $langue = $_POST['langue'];
-    $sous_titre = isset($_POST['sous_titre']) ? $_POST['sous_titre'] : 'jesaispas';
+    $sous_titre = isset($_POST['sous_titre']) ? $_POST['sous_titre'] : '';
     
     // Vérifie si la langue est dans la liste des langues acceptées
     if (!in_array($langue, ['Anglais', 'Français', 'Espagnol', 'Japonais', 'Chinois', 'Coréen'])) {
         // Si la langue n'est pas acceptée, affiche la langue
-        var_dump($langue);
     }
 
     // Vérifie si le sous-titre est dans la liste des langues acceptées
     if (!in_array($sous_titre, ['Anglais', 'Français', 'Espagnol', 'Japonais', 'Chinois', 'Coréen', 'Autre', ''])) {
         // Si le sous-titre n'est pas accepté, affiche le sous-titre
-        var_dump($sous_titre);
     }
 
     // Vérifie si un fichier image a été téléchargé
@@ -54,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    $stmt = $pdo->prepare("INSERT INTO film (nom_film, auteur, synopsis, date_creation, genre, duree_heures, duree_minutes, pays, langue, sous_titre) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute([$nom_film, $auteur, $synopsis, $date_creation, $genre, $duree_heures, $duree_minutes, $pays, $langue, $sous_titre]);
+    $stmt = $pdo->prepare("INSERT INTO film (nom_film, auteur, synopsis, date_creation, genre, duree_heures, duree_minutes, image, pays, langue, sous_titre) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$nom_film, $auteur, $synopsis, $date_creation, $genre, $duree_heures, $duree_minutes,$imagePath, $pays, $langue, $sous_titre]);
     echo 'Film ajouté avec succès !';
 }
 ?>
