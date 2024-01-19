@@ -92,12 +92,13 @@ session_start();
             <p>Web-Movie</p>
             <div class="flow home">
                 <span class="material-icons">home</span>
-                <a href="index.html" class="redirection-btn">Home</a>
+                <a href="index.php" class="redirection-btn">Home</a>
             </div>
             
             <div class="flow">
-                <span class="material-icons">movie_filter</span>
-                <h2>Reservation</h2>
+    <span class="material-icons">movie_filter</span>
+    <a href="loginreservation.php" class="redirection-btn"><h2>Reservation</h2></a>
+    
             </div>
             <div class="flow">
                 <span class="material-icons">search</span>

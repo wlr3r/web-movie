@@ -12,10 +12,11 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Vérifiez les informations d'identification de l'administrateur dans la base de données
-$stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE nom = :nom AND password = :password AND role = :role');
-$stmt->execute(['nom' => $username, 'password' => $password, 'role' => 'admin']);
+$stmt = $pdo->prepare('SELECT * FROM utilisateur WHERE nom = :nom AND role = :role');
+$stmt->execute(['nom' => $username, 'role' => 'admin']);
 $user = $stmt->fetch();
-if ($user['role'] == 'admin') {
+
+if ($user && password_verify($password, $user['password'])) {
     $_SESSION['admin_logged_in'] = true; 
     header('Location: users.php');
 } else {
@@ -23,4 +24,4 @@ if ($user['role'] == 'admin') {
 }
 
 ?>
-``` 
+

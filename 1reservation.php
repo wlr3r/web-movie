@@ -82,7 +82,7 @@ form input[type="submit"]:hover {
  <label for="film">Film:</label>
  <select id="film" name="film">
  <?php foreach ($films as $film): ?>
- <option value="<?= $film['id_film'] ?>"><?= $film['nom_film'] ?> (<?= $film['duree'] ?> minutes)</option>
+ <option value="<?= $film['id_film'] ?>"><?= $film['nom_film'] ?> (<?= $film['duree_heures'] ?> heure(s) <?= $film['duree_minutes'] ?> minute(s)</option>
  <?php endforeach; ?>
  </select>
 </div>
