@@ -1,4 +1,5 @@
 # Réservation de Cinéma
+#SCHOOL PROJET
 
 Bienvenue sur le site de réservation de cinéma, votre destination ultime pour explorer, réserver et profiter des derniers films et émissions de télévision. Découvrez ci-dessous les nouvelles fonctionnalités ajoutées à notre plateforme.
 
