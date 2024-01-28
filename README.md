@@ -1,5 +1,5 @@
 # Réservation de Cinéma
-#SCHOOL PROJET
+
 
 Bienvenue sur le site de réservation de cinéma, votre destination ultime pour explorer, réserver et profiter des derniers films et émissions de télévision. Découvrez ci-dessous les nouvelles fonctionnalités ajoutées à notre plateforme.
 
@@ -41,3 +41,5 @@ Pour installer localement, suivez ces étapes :
 
 - PHP 7.4 ou supérieur
 - MySQL 5.7 ou supérieur
+
+Projet d'école
